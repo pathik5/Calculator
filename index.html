@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Kitty Calculator</title>
+    <link rel="stylesheet" href="/hello kitty/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" class="calculator-screen" id="calculator-screen" disabled>
+            <div class="calculator-keys">
+                <button type="button" class="operator" value="+">+</button>
+                <button type="button" class="operator" value="-">-</button>
+                <button type="button" class="operator" value="*">&times;</button>
+                <button type="button" class="operator" value="/">&divide;</button>
+                <button type="button" value="9">9</button>
+                <button type="button" value="8">8</button>
+                <button type="button" value="7">7</button>
+                <button type="button" value="6">6</button>
+                <button type="button" value="5">5</button>
+                <button type="button" value="4">4</button>
+                <button type="button" value="3">3</button>
+                <button type="button" value="2">2</button>
+                <button type="button" value="1">1</button>
+                <button type="button" value="0">0</button>
+                <button type="button" value=".">.</button>
+                <button type="button" value="00">00</button>
+                <button type="button" class="all-clear" value="all-clear">AC</button>
+                <button type="button" class="equal-sign" value="=">=</button>
+            </div>
+        </div>
+        
+        <div class="history-icon" id="history-icon">📜</div>
+        <div class="theme-toggle" id="theme-toggle">🌙</div>
+
+        <div class="history-panel" id="history-panel">
+            <button class="close-history-btn" id="close-history-btn">X</button>
+            <button class="clear-history-btn" id="clear-history-btn">Clear History</button>
+            <h2>History</h2>
+            <ul id="history-list"></ul>
+            <div id="full-equation-panel" class="full-equation-panel"></div>
+        </div>
+    </div>
+    <audio id="hello-kitty-sound" src="/sayhellokitty1.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
