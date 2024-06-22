@@ -1,9 +1,9 @@
+/* General reset and body styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
     background-color: #ffd6e8; /* Light pink */
@@ -11,17 +11,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    transition: background-color 0.3s;
+    position: relative;
 }
 
+/* Container and calculator styling */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    position: relative;
 }
-
 .calculator {
     background-color: #ffccf7; /* Lighter pink */
     border-radius: 20px;
@@ -31,7 +30,6 @@ body {
     max-width: 300px;
     text-align: center;
 }
-
 .calculator-screen {
     width: 100%;
     height: 60px;
@@ -44,13 +42,11 @@ body {
     padding: 10px;
     border-radius: 10px;
 }
-
 .calculator-keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
 }
-
 button {
     height: 60px;
     font-size: 1.5rem;
@@ -62,41 +58,38 @@ button {
     transition: background-color 0.3s, color 0.3s;
     border: 2px solid transparent;
 }
-
 button.operator {
     background-color: #ff99d9; /* Medium pink */
 }
-
 button.equal-sign {
     background-color: #ff99d9; /* Medium pink */
     grid-column: span 2;
 }
-
 button.all-clear {
     background-color: #ff99d9; /* Medium pink */
     grid-column: span 2;
 }
-
 button:hover {
     background-color: #ffcce6; /* Light pink */
 }
 
+/* History and theme toggle icons */
+.history-icon, .theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
 .history-icon {
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 50px;
+    right: 60px; /* Adjust to move right */
 }
-
 .theme-toggle {
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    right: 20px; /* Adjust to move right */
 }
 
+/* History panel styling */
 .history-panel {
     background-color: #ffccf7; /* Lighter pink */
     border-radius: 20px;
@@ -106,94 +99,19 @@ button:hover {
     max-width: 300px;
     display: none;
     position: absolute;
-    top: calc(100% + 10px); /* Positioned below calculator with 10px gap */
-    left: 0;
-    z-index: 10; /* Ensure history panel is above other content */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
 .history-panel.open {
     display: block;
 }
-
 .close-history-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
+    float: right;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: #666;
 }
-
 .clear-history-btn {
-    background-color: #ff99d9; /* Medium pink */
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+    display: block;
+    margin-top: 10px;
     cursor: pointer;
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 10px;
 }
-
-.history-panel h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.history-panel ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.history-panel .full-equation-panel {
-    margin-top: 20px;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    font-size: 1.2rem;
-}
-
-/* Dark theme */
-body.dark {
-    background-color: #2e2e2e;
-}
-
-body.dark .calculator {
-    background-color: #444;
-}
-
-body.dark .calculator-screen {
-    background-color: #666;
-    color: #fff;
-}
-
-body.dark button {
-    background-color: #555;
-    color: #fff;
-}
-
-body.dark button.operator,
-body.dark button.equal-sign,
-body.dark button.all-clear {
-    background-color: #888;
-}
-
-body.dark button:hover {
-    background-color: #777;
-}
-
-body.dark .history-panel {
-    background-color: #444;
-}
-
-body.dark .close-history-btn {
-    color: #fff;
-}
-
-body.dark .clear-history-btn {
-    background-color: #888;
-}
-
-
